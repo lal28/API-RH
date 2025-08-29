@@ -1,4 +1,4 @@
-// data.js
+// data.js dados de exemplo que servem como banco de dados para alguns testes
 export let users = [
     {
       id: 1,

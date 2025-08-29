@@ -1,8 +1,11 @@
+//importar as bibliotecas
 import express from "express";
 import { users } from "../data.js";
 
 const router = express.Router();
 let idCounter = 6;
+
+//##CRUD##
 
 // CREATE
 router.post("/", (req, res) => {
