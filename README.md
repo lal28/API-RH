@@ -114,6 +114,60 @@ api-rh/
     └── users.js         # Rotas CRUD dos usuários
 ```
 
+# 📖 Documentação da API com Swagger
+
+## 🌐 Acessando a Documentação
+
+Após iniciar o servidor, acesse a documentação interativa em:
+```
+http://localhost:3000/api/v1/docs
+```
+
+## 🚀 Como Usar a Documentação
+
+### 1. **Explorar Endpoints**
+- Expandir cada seção para ver os endpoints disponíveis
+- Visualizar métodos HTTP (GET, POST, PUT, DELETE)
+- Ver descrições detalhadas de cada operação
+
+### 2. **Testar Endpoints Diretamente**
+- Clicar em "Try it out" em qualquer endpoint
+- Preencher os parâmetros necessários
+- Clicar em "Execute" para enviar a requisição
+- Ver a resposta em tempo real com código de status e corpo
+
+### 3. **Exemplos de Uso**
+- Todos os campos incluem exemplos predefinidos
+- Modelos de requisição prontos para teste
+- Respostas de sucesso e erro documentadas
+
+### 4. **Esquemas de Dados**
+- Seção "Schemas" mostra a estrutura completa dos usuários
+- Detalhes de todos os campos e seus formatos
+- Valores obrigatórios versus opcionais
+
+## 📋 Endpoints Principais
+
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET | `/users` | Listar todos os usuários |
+| POST | `/users` | Criar novo usuário |
+| GET | `/users/{id}` | Buscar usuário por ID |
+| PUT | `/users/{id}` | Atualizar usuário |
+| DELETE | `/users/{id}` | Excluir usuário |
+
+## 🔍 Dica Importante
+
+A documentação é **interativa** - você pode testar todas as operações diretamente pela interface do Swagger sem necessidade de ferramentas externas como Postman ou Insomnia.
+
+## ℹ️ Observação
+
+Esta API é um módulo inicial de um sistema de RH mais completo, focado atualmente apenas no gerenciamento de usuários.
+
+---
+
+*Documentação gerada automaticamente com Swagger/OpenAPI 3.0*
+
 ## ⚠️ Observações importantes
 
 - **Dados temporários**: Os dados ficam apenas na memória. Ao reiniciar o servidor, todas as alterações são perdidas
@@ -124,6 +178,8 @@ api-rh/
 - **Node.js** - Runtime JavaScript
 - **Express.js** - Framework web
 - **Body-Parser** - Middleware para parsing JSON
+- **Swagger UI** - API Documentation
+- **Swagger exprees** - API Documentation
 
 ## 📄 Licença
 
