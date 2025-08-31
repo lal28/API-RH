@@ -1,3 +1,4 @@
+
 {
     "openapi": "3.0.0",
     "info": {
@@ -15,7 +16,7 @@
         }
     ],
     "paths": {
-        "/users": {
+        "/api/v1/users": {
             "get": {
                 "summary": "Get all users",
                 "description": "Retrieve a list of all users in the system",
@@ -71,7 +72,7 @@
                 }
             }
         },
-        "/users/{id}": {
+        "/api/v1/users/{id}": {
             "get": {
                 "summary": "Get user by ID",
                 "description": "Retrieve a specific user by their ID",
@@ -202,197 +203,213 @@
         }
     },
     "components": {
-        "schemas": {
-          "User": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "integer",
-                "example": 1
-              },
-              "nome": {
-                "type": "string",
-                "example": "Lucas Araujo"
-              },
-              "dataNascimento": {
-                "type": "string",
-                "format": "date",
-                "example": "1995-05-10"
-              },
-              "telefone": {
-                "type": "string",
-                "example": "(92) 99999-8888"
-              },
-              "email": {
-                "type": "string",
-                "format": "email",
-                "example": "lucas@email.com"
-              },
-              "estadoCivil": {
-                "type": "string",
-                "enum": ["solteiro", "casado", "divorciado", "viuvo"],
-                "example": "solteiro"
-              },
-              "sexo": {
-                "type": "string",
-                "enum": ["masculino", "feminino"],
-                "example": "masculino"
-              },
-              "cep": {
-                "type": "string",
-                "example": "69000-000"
-              },
-              "endereco": {
-                "type": "string",
-                "example": "Rua Exemplo, 123"
-              },
-              "bairro": {
-                "type": "string",
-                "example": "Centro"
-              },
-              "cidade": {
-                "type": "string",
-                "example": "Manaus"
-              },
-              "estado": {
-                "type": "string",
-                "example": "AM"
-              },
-              "pais": {
-                "type": "string",
-                "example": "Brasil"
-              },
-              "usuario": {
-                "type": "string",
-                "example": "lucasaraujo"
-              },
-              "departamento": {
-                "type": "string",
-                "example": "TI"
-              },
-              "emailCorp": {
-                "type": "string",
-                "format": "email",
-                "example": "lucas.araujo@empresa.com"
-              },
-              "ativo": {
-                "type": "string",
-                "enum": ["sim", "não"],
-                "example": "sim"
-              },
-              "dataAdmissao": {
-                "type": "string",
-                "format": "date",
-                "example": "2023-01-15"
-              },
-              "numeroIdentidade": {
-                "type": "string",
-                "example": "12345678"
-              },
-              "numeroCpf": {
-                "type": "string",
-                "example": "11122233344"
+      "schemas": {
+        "User": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "example": 1,
+              "readOnly": true
+            },
+            "nome": {
+              "type": "string",
+              "example": "Lucas Araujo"
+            },
+            "dataNascimento": {
+              "type": "string",
+              "format": "date",
+              "example": "1995-05-10"
+            },
+            "telefone": {
+              "type": "string",
+              "example": "(92) 99999-8888"
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "example": "lucas@email.com"
+            },
+            "estadoCivil": {
+              "type": "string",
+              "enum": ["solteiro", "casado", "divorciado", "viúvo"],
+              "example": "solteiro"
+            },
+            "sexo": {
+              "type": "string",
+              "enum": ["masculino", "feminino", "outro"],
+              "example": "masculino"
+            },
+            "cep": {
+              "type": "string",
+              "example": "69000-000"
+            },
+            "endereco": {
+              "type": "string",
+              "example": "Rua Exemplo, 123"
+            },
+            "bairro": {
+              "type": "string",
+              "example": "Centro"
+            },
+            "cidade": {
+              "type": "string",
+              "example": "Manaus"
+            },
+            "estado": {
+              "type": "string",
+              "example": "AM"
+            },
+            "pais": {
+              "type": "string",
+              "example": "Brasil"
+            },
+            "usuario": {
+              "type": "string",
+              "example": "lucasaraujo"
+            },
+            "departamento": {
+              "type": "string",
+              "example": "TI"
+            },
+            "emailCorp": {
+              "type": "string",
+              "format": "email",
+              "example": "lucas.araujo@empresa.com"
+            },
+            "ativo": {
+              "type": "string",
+              "enum": ["sim", "não"],
+              "example": "sim"
+            },
+            "dataAdmissao": {
+              "type": "string",
+              "format": "date",
+              "example": "2023-01-15"
+            },
+            "numeroIdentidade": {
+              "type": "string",
+              "example": "12345678"
+            },
+            "numeroCpf": {
+              "type": "string",
+              "example": "11122233344"
+            }
+          }
+        },
+        "UserInput": {
+          "type": "object",
+          "required": ["nome", "email", "usuario", "departamento"],
+          "properties": {
+            "nome": {
+              "type": "string",
+              "example": "Lucas Araujo"
+            },
+            "dataNascimento": {
+              "type": "string",
+              "format": "date",
+              "example": "1995-05-10"
+            },
+            "telefone": {
+              "type": "string",
+              "example": "(92) 99999-8888"
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "example": "lucas@email.com"
+            },
+            "estadoCivil": {
+              "type": "string",
+              "enum": ["solteiro", "casado", "divorciado", "viúvo"],
+              "example": "solteiro"
+            },
+            "sexo": {
+              "type": "string",
+              "enum": ["masculino", "feminino", "outro"],
+              "example": "masculino"
+            },
+            "cep": {
+              "type": "string",
+              "example": "69000-000"
+            },
+            "endereco": {
+              "type": "string",
+              "example": "Rua Exemplo, 123"
+            },
+            "bairro": {
+              "type": "string",
+              "example": "Centro"
+            },
+            "cidade": {
+              "type": "string",
+              "example": "Manaus"
+            },
+            "estado": {
+              "type": "string",
+              "example": "AM"
+            },
+            "pais": {
+              "type": "string",
+              "example": "Brasil"
+            },
+            "usuario": {
+              "type": "string",
+              "example": "lucasaraujo"
+            },
+            "departamento": {
+              "type": "string",
+              "example": "TI"
+            },
+            "emailCorp": {
+              "type": "string",
+              "format": "email",
+              "example": "lucas.araujo@empresa.com"
+            },
+            "ativo": {
+              "type": "string",
+              "enum": ["sim", "não"],
+              "example": "sim"
+            },
+            "dataAdmissao": {
+              "type": "string",
+              "format": "date",
+              "example": "2023-01-15"
+            },
+            "numeroIdentidade": {
+              "type": "string",
+              "example": "12345678"
+            },
+            "numeroCpf": {
+              "type": "string",
+              "example": "11122233344"
+            }
+          }
+        },
+        "UserList": {
+          "type": "object",
+          "properties": {
+            "count": {
+              "type": "integer",
+              "example": 5
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/User"
               }
             }
-          },
-          "UserInput": {
-            "type": "object",
-            "required": ["nome", "email", "usuario", "departamento"],
-            "properties": {
-              "nome": {
-                "type": "string",
-                "example": "Lucas Araujo"
-              },
-              "dataNascimento": {
-                "type": "string",
-                "format": "date",
-                "example": "1995-05-10"
-              },
-              "telefone": {
-                "type": "string",
-                "example": "(92) 99999-8888"
-              },
-              "email": {
-                "type": "string",
-                "format": "email",
-                "example": "lucas@email.com"
-              },
-              "estadoCivil": {
-                "type": "string",
-                "enum": ["solteiro", "casado", "divorciado", "viuvo"],
-                "example": "solteiro"
-              },
-              "sexo": {
-                "type": "string",
-                "enum": ["masculino", "feminino"],
-                "example": "masculino"
-              },
-              "cep": {
-                "type": "string",
-                "example": "69000-000"
-              },
-              "endereco": {
-                "type": "string",
-                "example": "Rua Exemplo, 123"
-              },
-              "bairro": {
-                "type": "string",
-                "example": "Centro"
-              },
-              "cidade": {
-                "type": "string",
-                "example": "Manaus"
-              },
-              "estado": {
-                "type": "string",
-                "example": "AM"
-              },
-              "pais": {
-                "type": "string",
-                "example": "Brasil"
-              },
-              "usuario": {
-                "type": "string",
-                "example": "lucasaraujo"
-              },
-              "departamento": {
-                "type": "string",
-                "example": "TI"
-              },
-              "emailCorp": {
-                "type": "string",
-                "format": "email",
-                "example": "lucas.araujo@empresa.com"
-              },
-              "ativo": {
-                "type": "string",
-                "enum": ["sim", "não"],
-                "example": "sim"
-              },
-              "dataAdmissao": {
-                "type": "string",
-                "format": "date",
-                "example": "2023-01-15"
-              },
-              "numeroIdentidade": {
-                "type": "string",
-                "example": "12345678"
-              },
-              "numeroCpf": {
-                "type": "string",
-                "example": "11122233344"
-              }
-            }
-          },
-          "Error": {
-            "type": "object",
-            "properties": {
-              "error": {
-                "type": "string",
-                "example": "Usuário não encontrado"
-              }
+          }
+        },
+        "Error": {
+          "type": "object",
+          "properties": {
+            "error": {
+              "type": "string",
+              "example": "Usuário não encontrado"
             }
           }
         }
       }
+    }
 }
