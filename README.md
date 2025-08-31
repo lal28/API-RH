@@ -108,11 +108,12 @@ Importe as requisições usando os exemplos de cURL acima ou configure manualmen
 
 ```
 api-rh/
-├── package.json          # Dependências e scripts
-├── index.js             # Servidor principal
-├── data.js              # Dados em memória
+├── package.json            # Dependências e scripts
+├── index.js                # Servidor principal
+├── data.js                 # Dados em memória
 └── routes/
-    └── users.js         # Rotas CRUD dos usuários
+    └── users.js            # Rotas CRUD dos usuários
+    └── swagger.route.js    # Rotas documentação
 ```
 
 # 📖 Documentação da API com Swagger
