@@ -11,5 +11,6 @@ app.use("/api/v1/users", usersRouter);
 app.use("/api/v1/docs", swaggerRoute);
 
 app.listen(3000, () => {
-  console.log("API rodando em http://localhost:3000 🚀");
+  console.log("API rodando em http://localhost:3000");
+  console.log(`Docs: http://localhost:3000/api/v1/docs`);
 });
