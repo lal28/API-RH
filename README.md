@@ -39,6 +39,7 @@ O servidor estará rodando em: `http://localhost:3000`
 
 | Método | Endpoint | Descrição |
 |--------|----------|-----------|
+| `GET` | `/api/v1/docs` | Documentação Swagger |
 | `GET` | `/api/v1/users` | Lista todos os funcionários |
 | `GET` | `/api/v1/users/:id` | Busca funcionário por ID |
 | `POST` | `/api/v1/users` | Cria novo funcionário |
@@ -146,32 +147,19 @@ http://localhost:3000/api/v1/docs
 - Detalhes de todos os campos e seus formatos
 - Valores obrigatórios versus opcionais
 
-## 📋 Endpoints Principais
 
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET | `/users` | Listar todos os usuários |
-| POST | `/users` | Criar novo usuário |
-| GET | `/users/{id}` | Buscar usuário por ID |
-| PUT | `/users/{id}` | Atualizar usuário |
-| DELETE | `/users/{id}` | Excluir usuário |
-
-## 🔍 Dica Importante
+## 🔍 Dica
 
 A documentação é **interativa** - você pode testar todas as operações diretamente pela interface do Swagger sem necessidade de ferramentas externas como Postman ou Insomnia.
 
-## ℹ️ Observação
 
-Esta API é um módulo inicial de um sistema de RH mais completo, focado atualmente apenas no gerenciamento de usuários.
-
----
 
 *Documentação gerada automaticamente com Swagger/OpenAPI 3.0*
 
 ## ⚠️ Observações importantes
 
 - **Dados temporários**: Os dados ficam apenas na memória. Ao reiniciar o servidor, todas as alterações são perdidas
-- **Produção**: Para uso em produção, considere implementar um banco de dados real
+
 
 ## 🛠️ Tecnologias utilizadas
 
