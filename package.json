@@ -1,7 +1,6 @@
 {
   "name": "api-rh",
   "version": "1.0.0",
-  
   "main": "src/index.js",
   "type": "module",
   "scripts": {
@@ -19,7 +18,8 @@
   "description": "API RESTful do sistema rh",
   "dependencies": {
     "body-parser": "^2.2.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "swagger-ui": "^5.28.0",
+    "swagger-ui-express": "^5.0.1"
   }
-  
 }
