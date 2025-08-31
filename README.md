@@ -125,6 +125,25 @@ api-rh/
 - **Express.js** - Framework web
 - **Body-Parser** - Middleware para parsing JSON
 
+## 🌍 Possíveis usos da nossa API
+
+O objetivo inicial desta API é servir como **backend para o  [nosso sistema de RH](https://github.com/Pedro9185/Sprint-2-Projeto-Integrado-III)**, fornecendo as funcionalidades essenciais para cadastrar, consultar, atualizar e remover informações de funcionários.  
+
+Porém, como se trata de um **CRUD de usuários**, ela pode ser facilmente aproveitada em outros cenários, como por exemplo:
+
+- **Pequenas empresas**: substituir planilhas manuais, centralizando o cadastro de funcionários de forma mais organizada.  
+- **Startups**: integrar com sistemas de folha de pagamento, controle de ponto ou plataformas internas.  
+- **Departamentos de TI**: ser usada em treinamentos de integração entre front-end e back-end.  
+- **Soluções personalizadas**: permitir consultas rápidas sobre usuários (contato, departamento, status) em diferentes dispositivos.  
+
+Assim, mesmo começando como um projeto acadêmico, a API já demonstra como dados simples podem ganhar utilidade prática em diversos contextos do mundo real.
+
+## Desenvolvedores
+[Lucas Araujo](https://github.com/lal28)<br>
+[Pedro Henrique](https://github.com/Pedro9185)<br>
+[Jaine Bento](https://github.com/jaibento)<br>
+
+
 ## 📄 Licença
 
 Este projeto está sob a licença ISC
